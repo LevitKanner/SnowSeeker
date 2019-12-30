@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B09E3B623BA53E6004AE42B /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B09E3B523BA53E6004AE42B /* Facility.swift */; };
 		1B2EDF0023B78B41008012A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2EDEFF23B78B41008012A8 /* AppDelegate.swift */; };
 		1B2EDF0223B78B41008012A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2EDF0123B78B41008012A8 /* SceneDelegate.swift */; };
 		1B2EDF0423B78B41008012A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2EDF0323B78B41008012A8 /* ContentView.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B09E3B523BA53E6004AE42B /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
 		1B2EDEFC23B78B41008012A8 /* SnowSeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowSeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B2EDEFF23B78B41008012A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B2EDF0123B78B41008012A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				1B2EDF0123B78B41008012A8 /* SceneDelegate.swift */,
 				1B2EDF0323B78B41008012A8 /* ContentView.swift */,
 				1BBB5EA223B9599A00161712 /* ResortView.swift */,
+				1B09E3B523BA53E6004AE42B /* Facility.swift */,
 				1BBB5EA423B95D9D00161712 /* SkiDetails.swift */,
 				1BBB5EA623B95FC600161712 /* ResortDetails.swift */,
 				1BBB5EA023B94F4300161712 /* WelcomeView.swift */,
@@ -170,6 +173,7 @@
 			files = (
 				1BBB5EA723B95FC600161712 /* ResortDetails.swift in Sources */,
 				1BBB5EA523B95D9D00161712 /* SkiDetails.swift in Sources */,
+				1B09E3B623BA53E6004AE42B /* Facility.swift in Sources */,
 				1B2EDF0023B78B41008012A8 /* AppDelegate.swift in Sources */,
 				1BBB5EA123B94F4300161712 /* WelcomeView.swift in Sources */,
 				1BBB5E9F23B8FCAB00161712 /* Bundle-Extension.swift in Sources */,
