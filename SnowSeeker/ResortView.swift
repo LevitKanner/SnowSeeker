@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ResortView: View {
     var resort: Resort
+    @Environment(\.horizontalSizeClass) var sizeClass
+    @State var selectedFacility: Facility?
     
     var body: some View {
         ScrollView {
@@ -36,14 +38,20 @@ struct ResortView: View {
                 .frame(height: 400)
                 
                 HStack{
-                    Spacer()
-                    SkiDetails(resort: resort)
-                    ResortDetails(resort: resort)
-                    Spacer()
+                    if sizeClass == .compact {
+                        Spacer()
+                        VStack{ResortDetails(resort: resort)}
+                        VStack{SkiDetails(resort: resort)}
+                        Spacer()
+                    }else{
+                        ResortDetails(resort: resort)
+                        Spacer().frame(height: 2)
+                        SkiDetails(resort: resort)
+                    }
                 }
                 .font(.headline)
                 .foregroundColor(.secondary)
-                .padding(.top)
+                .padding(.horizontal)
                 
                 
                 Group{
@@ -54,15 +62,24 @@ struct ResortView: View {
                         .font(.headline)
                         .padding(.horizontal)
                     
-                    Text(ListFormatter.localizedString(byJoining: resort.facilities))
-                        .padding(.horizontal)
-                        
+                    HStack{
+                        ForEach(resort.facilityTypes) { facility in
+                            facility.icon
+                                .font(.title)
+                                .onTapGesture {
+                                    self.selectedFacility = facility
+                            }
+                        }
+                    }
+                    .padding(.vertical)
+                    
                 }
                 .padding(.horizontal)
-                
-                
             }
         }
+        .alert(item: $selectedFacility, content: { (facility) -> Alert in
+            facility.alert
+        })
         .navigationBarTitle("\(resort.name) , \(resort.country)" , displayMode: .inline)
     }
 }
