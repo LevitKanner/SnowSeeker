@@ -14,6 +14,7 @@
 		1B2EDF0623B78B43008012A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B2EDF0523B78B43008012A8 /* Assets.xcassets */; };
 		1B2EDF0923B78B43008012A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B2EDF0823B78B43008012A8 /* Preview Assets.xcassets */; };
 		1B2EDF0C23B78B43008012A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B2EDF0A23B78B43008012A8 /* LaunchScreen.storyboard */; };
+		1B67599423BB46E30046CE3A /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B67599323BB46E30046CE3A /* Favorites.swift */; };
 		1BBB5E9B23B8FA0800161712 /* resorts.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BBB5E9A23B8FA0800161712 /* resorts.json */; };
 		1BBB5E9D23B8FA9C00161712 /* Resort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBB5E9C23B8FA9C00161712 /* Resort.swift */; };
 		1BBB5E9F23B8FCAB00161712 /* Bundle-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBB5E9E23B8FCAB00161712 /* Bundle-Extension.swift */; };
@@ -33,6 +34,7 @@
 		1B2EDF0823B78B43008012A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B2EDF0B23B78B43008012A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B2EDF0D23B78B43008012A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B67599323BB46E30046CE3A /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		1BBB5E9A23B8FA0800161712 /* resorts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resorts.json; sourceTree = "<group>"; };
 		1BBB5E9C23B8FA9C00161712 /* Resort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resort.swift; sourceTree = "<group>"; };
 		1BBB5E9E23B8FCAB00161712 /* Bundle-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Extension.swift"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				1B2EDF0123B78B41008012A8 /* SceneDelegate.swift */,
 				1B2EDF0323B78B41008012A8 /* ContentView.swift */,
 				1BBB5EA223B9599A00161712 /* ResortView.swift */,
+				1B67599323BB46E30046CE3A /* Favorites.swift */,
 				1B09E3B523BA53E6004AE42B /* Facility.swift */,
 				1BBB5EA423B95D9D00161712 /* SkiDetails.swift */,
 				1BBB5EA623B95FC600161712 /* ResortDetails.swift */,
@@ -176,6 +179,7 @@
 				1B09E3B623BA53E6004AE42B /* Facility.swift in Sources */,
 				1B2EDF0023B78B41008012A8 /* AppDelegate.swift in Sources */,
 				1BBB5EA123B94F4300161712 /* WelcomeView.swift in Sources */,
+				1B67599423BB46E30046CE3A /* Favorites.swift in Sources */,
 				1BBB5E9F23B8FCAB00161712 /* Bundle-Extension.swift in Sources */,
 				1BBB5EA323B9599A00161712 /* ResortView.swift in Sources */,
 				1B2EDF0223B78B41008012A8 /* SceneDelegate.swift in Sources */,
