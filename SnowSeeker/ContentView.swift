@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
+    @ObservedObject var favorites = Favorites()
     
     var body: some View {
         NavigationView{
@@ -17,7 +18,7 @@ struct ContentView: View {
                 NavigationLink(destination: ResortView(resort: resort)) {
                     Image(resort.id)
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                         .frame(width: 40 , height: 25)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black , lineWidth: 0.5))
@@ -29,12 +30,21 @@ struct ContentView: View {
                         Text("\(resort.runs)")
                             .font(.custom("Avenir" , size: 10))
                     }
+                    .layoutPriority(1)
+                    
+                    if self.favorites.contains(resort) {
+                        Spacer()
+                        Image(systemName: "heart.fill")
+                            .accessibility(label: Text("This is a favorite resort"))
+                            .foregroundColor(Color.red)
+                    }
                 }
             }
             .navigationBarTitle("Resorts")
             WelcomeView()
         }
-    .phoneOnlyStackNavigationView()
+        .environmentObject(favorites)
+        .phoneOnlyStackNavigationView()
         
     }
 }
