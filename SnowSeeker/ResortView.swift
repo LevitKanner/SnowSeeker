@@ -12,6 +12,7 @@ struct ResortView: View {
     var resort: Resort
     @Environment(\.horizontalSizeClass) var sizeClass
     @State var selectedFacility: Facility?
+    @EnvironmentObject var favorites: Favorites
     
     var body: some View {
         ScrollView {
@@ -71,16 +72,40 @@ struct ResortView: View {
                             }
                         }
                     }
-                    .padding(.vertical)
+                    .padding(.horizontal)
                     
                 }
                 .padding(.horizontal)
             }
+            
+            
+            Button(favorites.contains(resort) ? "Remove from Favorites" : "Add to Favorites") {
+                if self.favorites.contains(self.resort) {
+                    self.favorites.remove(self.resort)
+                } else {
+                    self.favorites.add(self.resort)
+                }
+            }
+            .padding()
+            
         }
         .alert(item: $selectedFacility, content: { (facility) -> Alert in
             facility.alert
         })
         .navigationBarTitle("\(resort.name) , \(resort.country)" , displayMode: .inline)
+            
+            ///Adds a button to mark a resort as favorite
+            .navigationBarItems(trailing: Button(action: {
+                if self.favorites.contains(self.resort){
+                    self.favorites.remove(self.resort)
+                }else{
+                    self.favorites.add(self.resort)
+                }
+            }){
+                Image(systemName: self.favorites.contains(self.resort) ? "suit.heart.fill" : "heart")
+                    .foregroundColor(self.favorites.contains(self.resort) ? Color.red : Color.gray)
+                    .font(.title)
+            })
     }
 }
 
