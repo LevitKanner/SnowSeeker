@@ -14,14 +14,15 @@ class Favorites: ObservableObject {
     private let saveKey = "Favorites"
     
     init(){
-        self.resorts = []
-        
         //Load favorites from userdefaults
         if let data = UserDefaults.standard.data(forKey: saveKey){
             if let decodedData = try? JSONDecoder().decode(Set<String>.self, from: data){
                 self.resorts = decodedData
+                return
             }
+            
         }
+        self.resorts = []
     }
     
     var count: Int {
