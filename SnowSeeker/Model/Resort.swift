@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Resort: Identifiable , Codable{
+struct Resort: Identifiable , Codable , Comparable{
+    static func < (lhs: Resort, rhs: Resort) -> Bool {
+        lhs.name < rhs.name
+    }
+    
     static let allResorts: [Resort] = Bundle.main.decode("resorts.json")
     static let example = allResorts[0]
     
