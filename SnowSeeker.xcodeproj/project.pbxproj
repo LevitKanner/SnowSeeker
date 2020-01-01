@@ -74,17 +74,11 @@
 		1B2EDEFE23B78B41008012A8 /* SnowSeeker */ = {
 			isa = PBXGroup;
 			children = (
-				1BBB5E9C23B8FA9C00161712 /* Resort.swift */,
-				1BBB5E9E23B8FCAB00161712 /* Bundle-Extension.swift */,
+				1BB4B1CF23BCE6400009D819 /* Views */,
+				1BB4B1CE23BCE6320009D819 /* Utils */,
+				1BB4B1CD23BCE6020009D819 /* Model */,
 				1B2EDEFF23B78B41008012A8 /* AppDelegate.swift */,
 				1B2EDF0123B78B41008012A8 /* SceneDelegate.swift */,
-				1B2EDF0323B78B41008012A8 /* ContentView.swift */,
-				1BBB5EA223B9599A00161712 /* ResortView.swift */,
-				1B67599323BB46E30046CE3A /* Favorites.swift */,
-				1B09E3B523BA53E6004AE42B /* Facility.swift */,
-				1BBB5EA423B95D9D00161712 /* SkiDetails.swift */,
-				1BBB5EA623B95FC600161712 /* ResortDetails.swift */,
-				1BBB5EA023B94F4300161712 /* WelcomeView.swift */,
 				1B2EDF0523B78B43008012A8 /* Assets.xcassets */,
 				1B2EDF0A23B78B43008012A8 /* LaunchScreen.storyboard */,
 				1B2EDF0D23B78B43008012A8 /* Info.plist */,
@@ -100,6 +94,36 @@
 				1B2EDF0823B78B43008012A8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1BB4B1CD23BCE6020009D819 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B67599323BB46E30046CE3A /* Favorites.swift */,
+				1BBB5E9C23B8FA9C00161712 /* Resort.swift */,
+				1B09E3B523BA53E6004AE42B /* Facility.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1BB4B1CE23BCE6320009D819 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1BBB5E9E23B8FCAB00161712 /* Bundle-Extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1BB4B1CF23BCE6400009D819 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B2EDF0323B78B41008012A8 /* ContentView.swift */,
+				1BBB5EA223B9599A00161712 /* ResortView.swift */,
+				1BBB5EA423B95D9D00161712 /* SkiDetails.swift */,
+				1BBB5EA623B95FC600161712 /* ResortDetails.swift */,
+				1BBB5EA023B94F4300161712 /* WelcomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
