@@ -17,26 +17,42 @@ struct ResortView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading , spacing: 20){
-                GeometryReader{ geometry in
-                    Group{
-                        if geometry.frame(in: .global).minY <= 0{
-                            Image(decorative:self.resort.id)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: geometry.size.width , height: geometry.size.height)
-                                .offset(y: geometry.frame(in: .global).minY/9)
-                                .clipped()
-                        }else {
-                            Image(self.resort.id)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: geometry.size.width , height: geometry.size.height + geometry.frame(in: .global).minY)
-                                .clipped()
-                                .offset(y: -geometry.frame(in: .global).minY)
+                ZStack{
+                    GeometryReader{ geometry in
+                        Group{
+                            if geometry.frame(in: .global).minY <= 0{
+                                Image(decorative:self.resort.id)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: geometry.size.width , height: geometry.size.height)
+                                    .offset(y: geometry.frame(in: .global).minY/9)
+                                    .clipped()
+                            }else {
+                                Image(self.resort.id)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: geometry.size.width , height: geometry.size.height + geometry.frame(in: .global).minY)
+                                    .clipped()
+                                    .offset(y: -geometry.frame(in: .global).minY)
+                            }
                         }
                     }
+                    .frame(height: 400)
+                    
+                    VStack{
+                        Text("Photo by:")
+                            .font(.custom("AvenirNext" , size: 12))
+                            .shadow(radius: 10)
+                            
+                            Text(resort.imageCredit)
+                                .font(.custom("AvenirNext" , size: 14))
+                                .shadow(radius: 10)
+                        
+                    }
+                    .padding()
+                    .offset(x: 130 , y: 180)
+                    
                 }
-                .frame(height: 400)
                 
                 HStack{
                     if sizeClass == .compact {
@@ -92,7 +108,7 @@ struct ResortView: View {
         .alert(item: $selectedFacility, content: { (facility) -> Alert in
             facility.alert
         })
-        .navigationBarTitle("\(resort.name) , \(resort.country)" , displayMode: .inline)
+            .navigationBarTitle("\(resort.name) , \(resort.country)" , displayMode: .inline)
             
             ///Adds a button to mark a resort as favorite
             .navigationBarItems(trailing: Button(action: {
