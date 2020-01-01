@@ -9,8 +9,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    let resorts: [Resort] = Bundle.main.decode("resorts.json")
+    @State var resorts: [Resort] = Bundle.main.decode("resorts.json")
     @ObservedObject var favorites = Favorites()
+    @State private var isSorting = false
+    @State private var isFiltering = false
+    
     
     var body: some View {
         NavigationView{
@@ -40,7 +43,28 @@ struct ContentView: View {
                     }
                 }
             }
+            .actionSheet(isPresented: $isSorting, content: { () -> ActionSheet in
+                ActionSheet(title: Text("sort"), message: Text("Select order of sort"), buttons: [
+                    .default(Text("Alphabetic"), action: {
+                        self.resorts.sort()
+                    }),
+                    .default(Text("Country"), action: {
+                        self.resorts.sort { (lhs, rhs) -> Bool in
+                            lhs.country < rhs.country
+                        }
+                    }),
+                    .default(Text("Default"), action: {
+                        self.resorts = Bundle.main.decode("resorts.json")
+                    }),
+                    .cancel()
+                ])
+            })
             .navigationBarTitle("Resorts")
+            .navigationBarItems(leading: Button("Sort"){
+                self.isSorting = true
+                }, trailing: Button("Filter"){
+                    self.isFiltering = true
+            })
             WelcomeView()
         }
         .environmentObject(favorites)
