@@ -42,23 +42,24 @@ struct ContentView: View {
                             .foregroundColor(Color.red)
                     }
                 }
+                .actionSheet(isPresented: self.$isSorting, content: { () -> ActionSheet in
+                    ActionSheet(title: Text("sort"), message: Text("Select order of sort"), buttons: [
+                        .default(Text("Alphabetic"), action: {
+                            self.resorts.sort()
+                        }),
+                        .default(Text("Country"), action: {
+                            self.resorts.sort { (lhs, rhs) -> Bool in
+                                lhs.country < rhs.country
+                            }
+                        }),
+                        .default(Text("Default"), action: {
+                            self.resorts = Bundle.main.decode("resorts.json")
+                        }),
+                        .cancel()
+                    ])
+                })
             }
-            .actionSheet(isPresented: $isSorting, content: { () -> ActionSheet in
-                ActionSheet(title: Text("sort"), message: Text("Select order of sort"), buttons: [
-                    .default(Text("Alphabetic"), action: {
-                        self.resorts.sort()
-                    }),
-                    .default(Text("Country"), action: {
-                        self.resorts.sort { (lhs, rhs) -> Bool in
-                            lhs.country < rhs.country
-                        }
-                    }),
-                    .default(Text("Default"), action: {
-                        self.resorts = Bundle.main.decode("resorts.json")
-                    }),
-                    .cancel()
-                ])
-            })
+            
             .navigationBarTitle("Resorts")
             .navigationBarItems(leading: Button("Sort"){
                 self.isSorting = true
